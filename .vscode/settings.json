@@ -9,4 +9,13 @@
         "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     },
     "gitDecoration.ignoredResourceForeground": "#3D4D67",
+    "git.decorations.enabled": true,
+    "git.decorations.colors": {
+    "modified": "#ff8800",
+    "added": "#00ff00",
+    "deleted": "#ff0000",
+    "renamed": "#0088ff",
+    "copied": "#0088ff",
+    "untracked": "#ffff00",
+    },
 }
