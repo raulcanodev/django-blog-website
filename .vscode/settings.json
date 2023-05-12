@@ -8,4 +8,5 @@
         "**/templates/**/*": "django-txt",
         "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     },
+    "gitDecoration.ignoredResourceForeground": "#3D4D67",
 }
