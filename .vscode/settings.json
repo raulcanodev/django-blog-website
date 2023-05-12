@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "/usr/bin/python3",
+    "python.languageServer": "Pylance",
+    "emmet.includeLanguages": { "django-html": "html" }, // this line to make sure for the autosuggestion while creating the html squeleton
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+    },
+}
