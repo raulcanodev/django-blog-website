@@ -1,7 +1,10 @@
 {
     "python.pythonPath": "/usr/bin/python3",
     "python.languageServer": "Pylance",
-    "emmet.includeLanguages": { "django-html": "html" }, // this line to make sure for the autosuggestion while creating the html squeleton
+    "emmet.includeLanguages": {
+        "django-html": "html",
+        "jinja-html": "html"
+    }, // this line to make sure for the autosuggestion while creating the html squeleton
     "files.associations": {
         "**/*.html": "html",
         "**/templates/**/*.html": "django-html",
@@ -11,11 +14,11 @@
     "gitDecoration.ignoredResourceForeground": "#3D4D67",
     "git.decorations.enabled": true,
     "git.decorations.colors": {
-    "modified": "#ff8800",
-    "added": "#00ff00",
-    "deleted": "#ff0000",
-    "renamed": "#0088ff",
-    "copied": "#0088ff",
-    "untracked": "#ffff00",
+        "modified": "#ff8800",
+        "added": "#00ff00",
+        "deleted": "#ff0000",
+        "renamed": "#0088ff",
+        "copied": "#0088ff",
+        "untracked": "#ffff00",
     },
 }
