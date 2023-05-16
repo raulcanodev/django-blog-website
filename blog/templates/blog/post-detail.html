@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+This post title
+{% endblock %} 
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post-detail.css" %}" />
+{% endblock css_files %}
+
+{% block content %}
+    <section id='summary'>
+        <h2>Post Title</h2>
+        <article>
+            <img src="{% static 'blog/images/mountains.jpg' %}" alt='Post Title'>
+            <address>By Raul</address>
+            <div>
+                Last update on <time>July 10</time>
+            <div>
+        </article>
+    </section>
+
+    <main>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas fuga ratione cumque, 
+            deleniti suscipit rerum ut quos id, aperiam aliquam blanditiis, tempore mollitia veritatis 
+            corporis sed quasi minima vel.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas fuga ratione cumque, 
+            deleniti suscipit rerum ut quos id, aperiam aliquam blanditiis, tempore mollitia veritatis 
+            corporis sed quasi minima vel.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas fuga ratione cumque, 
+            deleniti suscipit rerum ut quos id, aperiam aliquam blanditiis, tempore mollitia veritatis 
+            corporis sed quasi minima vel.
+        </p>
+    </main>
+{% endblock content %}
