@@ -11,31 +11,15 @@ This post title
 
 {% block content %}
     <section id='summary'>
-        <h2>Post Title</h2>
+        <h2>{{ post.title }}</h2>
         <article>
-            <img src="{% static 'blog/images/mountains.jpg' %}" alt='Post Title'>
-            <address>By Raul</address>
-            <div>
-                Last update on <time>July 10</time>
-            <div>
+            <img src="{% static 'blog/images/'|add:post.image %}" alt='{{ post.title }}'>
+            <address>By {{ post.author|title }}</address>
+            <div>Last update on <time>{{ post.date|date:"d M Y" }}</time><div>
         </article>
     </section>
 
     <main>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas fuga ratione cumque, 
-            deleniti suscipit rerum ut quos id, aperiam aliquam blanditiis, tempore mollitia veritatis 
-            corporis sed quasi minima vel.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas fuga ratione cumque, 
-            deleniti suscipit rerum ut quos id, aperiam aliquam blanditiis, tempore mollitia veritatis 
-            corporis sed quasi minima vel.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas fuga ratione cumque, 
-            deleniti suscipit rerum ut quos id, aperiam aliquam blanditiis, tempore mollitia veritatis 
-            corporis sed quasi minima vel.
-        </p>
+        {{ post.content|linebreaks }}
     </main>
 {% endblock content %}
