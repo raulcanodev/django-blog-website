@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import date
+from .models import Post, Author
+from django.shortcuts import get_object_or_404
 
-all_posts = [
+all_posts_old = [
     {
         "slug": "hike-in-the-mountains",
         "image": "mountains.jpg",
@@ -76,7 +78,8 @@ def get_date(post):
 
 
 def starting_page(request):
-    sorted_posts = sorted(all_posts, key=get_date)
+    posts = Post.objects.all()
+    sorted_posts = sorted(posts)
     lastest_posts = sorted_posts[-3:]
     return render(request, 'blog/index.html', {
         "posts": lastest_posts
@@ -84,12 +87,16 @@ def starting_page(request):
 
 def posts(request):
     return render(request, 'blog/all-posts.html', {
-        "all_posts": all_posts
+        "all_posts": posts
     })
     
 
 def post_detail(request, slug):
-    identified_post = next(post for post in all_posts if post['slug'] == slug)
+    post = get_object_or_404(Post, slug=slug)
+    
     return render(request, 'blog/post-detail.html', {
-        "post": identified_post
+        "title": post.title,
+        "author": post.author,
+        "date": post.date,
+        "post_content": post.post_content,
     })
